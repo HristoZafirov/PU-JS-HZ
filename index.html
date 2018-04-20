@@ -11,12 +11,12 @@
 		My first JS commit
 	</header>
 	<div class="container">
-		<img id="first" src="images/img1.jpg" />
+		<img id="first" class="def" src="images/img1.jpg" />
 		<img id="second" src="images/img2.jpg" />
 	</div>
 	<footer>
-		<input onclick="swap(2);" class="btn right" type="button" value="Next" />
-		<input onclick="swap(1);" class="btn left" type="button" value="Previous" />
+		<input onclick="swap('next');" class="btn right" type="button" value="Next" />
+		<input onclick="swap('previous');" class="btn left" type="button" value="Previous" />
 		<div class="clear"></div>
 	</footer>
 
@@ -24,7 +24,7 @@
 		function swap(par) {
 			var el1 = document.getElementById('first');
 			var el2 = document.getElementById('second');
-			if (par == 2) {
+			if (par == "next") {
 				el1.style.animation = "swapFromFirstImg .5s ease-out 0s 1 normal";
 				window.setTimeout(function(){
 				el2.style.display = "block";
@@ -33,15 +33,22 @@
 				window.setTimeout(function(){
 					el1.style.display = "none";
 				}, 500);
-			} else if (par == 1) {
-				el2.style.animation = "swapFromSecondImg .5s ease-out 0s 1 normal";
-				window.setTimeout(function(){
-					el1.style.display = "block";
-					el1.style.animation = "swapToSecondImg .5s ease-in 0s 1 normal";
-				}, 250);
-				window.setTimeout(function(){
-					el2.style.display = "none";
-				}, 500);
+				if (el1.classList.contains("def")) {
+					el1.classList.remove("def");
+				}
+			} else if (par == "previous") {
+				if (el1.classList.contains("def")) {
+					return;
+				} else {
+					el2.style.animation = "swapFromSecondImg .5s 	ease-out 0s 1 normal";
+					window.setTimeout(function(){
+						el1.style.display = "block";
+						el1.style.animation = "swapToSecondImg .5s 	ease-in 0s 1 normal";
+					}, 250);
+					window.setTimeout(function(){
+						el2.style.display = "none";
+					}, 500);
+				}
 			}
 		}
 	</script>
