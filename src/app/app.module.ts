@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
