@@ -1,0 +1,15 @@
+.alert {
+	height: 30px;
+	font: 18px/15px 'Merienda One';
+}
+.firstInput {
+	border: 2px solid #ffeecc;
+	margin-bottom: 15px;
+}
+.secondInput{
+	border: 2px solid #ffeecc;
+}
+input[type="text"],
+input[type="password"] {
+	color: #ffeecc;
+}
